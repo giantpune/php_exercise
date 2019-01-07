@@ -1,0 +1,41 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS 'inventory' (_id INTEGER PRIMARY KEY AUTOINCREMENT, sku TEXT UNIQUE NOT NULL, name TEXT NOT NULL, description TEXT NOT NULL, price REAL DEFAULT 0, notes TEXT, pet_type TEXT NOT NULL, item_type TEXT NOT NULL, color TEXT NOT NULL, lifespan INTEGER DEFAULT 0, dob INTEGER DEFAULT 0, quantity INTEGER DEFAULT 0);
+
+INSERT INTO inventory VALUES(1,'100','Hound','Aint nothin but a hound dog',40.50,NULL,'dog','pet','brown',14,1546726870,1);
+INSERT INTO inventory VALUES(2,'101','Mutt','Some sort of dog.  We dont know what type',19.99,NULL,'dog','pet','brown',10,1515190870,1);
+INSERT INTO inventory VALUES(3,'102','Pittbull','Great with kids',99.95,'these are not really great with kids.','dog','pet','black',9,1373062870,1);
+INSERT INTO inventory VALUES(22,'103','Pittbull','Great with kids',99.95,'these are not really great with kids.','dog','pet','white',9,1373062870,1);
+INSERT INTO inventory VALUES(23,'104','Lab','Have been known to retrieve',30.99,NULL,'dog','pet','black',9,1303062870,1);
+INSERT INTO inventory VALUES(24,'105','Lab','Have been known to retrieve',30.99,NULL,'dog','pet','brown',9,1303062870,1);
+
+INSERT INTO inventory VALUES(4,'110','Tom Cat','Part of a collection we got from a cat lady',14.99,NULL,'cat','pet','brown',20,946765270,1);
+INSERT INTO inventory VALUES(5,'111','Russian Blue Cat','Part of a collection we got from a cat lady',14.99,'We got 2 of these from the same old lady','cat','pet','gray',20,946765270,2);
+INSERT INTO inventory VALUES(6,'112','Persian Cat','Imported from Persia',30,'Not really from persia','cat','pet','white',18,1483309270,1);
+INSERT INTO inventory VALUES(18,'113','Persian Cat','Imported from Persia',30,'Not really from persia','cat','pet','brown',18,1383309270,2);
+INSERT INTO inventory VALUES(19,'114','Minx Cat','Part of a collection we got from a cat lady',12,NULL,'cat','pet','white',20,1283309270,1);
+
+INSERT INTO inventory VALUES(7,'120','Ball Python','Python that can ball itself up',80,NULL,'reptile','pet','brown',30,996704470,3);
+INSERT INTO inventory VALUES(8,'121','Rattlesnake','Great entertainment for babies',180,NULL,'reptile','pet','brown',25,1173219670,1);
+INSERT INTO inventory VALUES(9,'122','Anaconda','Our anaconda don''t want none unless you got buns, hun',299.95,NULL,'reptile','pet','black',10,1280874070,1);
+INSERT INTO inventory VALUES(20,'123','Ball Python, Albino','Python that can ball itself up',180,NULL,'reptile','pet','white',30,996704470,2);
+
+INSERT INTO inventory VALUES(10,'130','Turtle','Teenage and mutant',29.95,NULL,'reptile','pet','green',70,1386282070,4);
+INSERT INTO inventory VALUES(11,'131','Tortoise','Steve Erwin''s pet',2029.95,NULL,'reptile','pet','green',150,80470,1);
+
+INSERT INTO inventory VALUES(12,'200','Ball','Dogs love balls.',4.99,NULL,'toy','accessory','green',NULL,NULL,20);
+INSERT INTO inventory VALUES(13,'201','Ball','Dogs love balls.',4.99,NULL,'toy','accessory','blue',NULL,NULL,20);
+INSERT INTO inventory VALUES(14,'202','Ball','Dogs love balls.',4.99,NULL,'toy','accessory','red',NULL,NULL,20);
+INSERT INTO inventory VALUES(15,'203','Cardboard Box','Purfect for your cat',29.95,NULL,'toy','accessory','brown',NULL,NULL,100);
+INSERT INTO inventory VALUES(16,'204','Scratching Post','Keep your cat from tearing up everything you own',69.95,NULL,'toy','accessory','brown',NULL,NULL,10);
+INSERT INTO inventory VALUES(17,'205','Scratching Post','Keep your cat from tearing up everything you own',69.95,NULL,'toy','accessory','blue',NULL,NULL,9);
+INSERT INTO inventory VALUES(21,'206','Scratching Post','Keep your cat from tearing up everything you own',69.95,NULL,'toy','accessory','red',NULL,NULL,10);
+
+INSERT INTO inventory VALUES(25,'210','Pet Carrier (small)','Keep your cat from tearing up your car',30,NULL,'carrier','accessory','black',NULL,NULL,5);
+INSERT INTO inventory VALUES(26,'211','Pet Carrier (medium)','Keep your bigger cat from tearing up your car',40,NULL,'carrier','accessory','black',NULL,NULL,5);
+INSERT INTO inventory VALUES(27,'212','Pet Carrier (large)','Keep your dog from puking in your car',50,NULL,'carrier','accessory','black',NULL,NULL,5);
+INSERT INTO inventory VALUES(28,'213','Pet Carrier (x-large)','Keep your huge dog from puking in your car',60,NULL,'carrier','accessory','black',NULL,NULL,5);
+
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('inventory',1);
+COMMIT;
